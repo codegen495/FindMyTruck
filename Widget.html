@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Widget</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <link rel="icon" type="image/png" href="./assets/Findmy.png">
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Set your theme color */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Make sure the body takes at least the full height of the viewport */
+        }
+
+        header {
+            background-color: #fff; /* Set your header background color to black */
+            color: #fff; /* Set your text color to white */
+            padding: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header img {
+            width: 300px;
+        }
+
+        nav {
+            display: flex;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        nav a {
+            color: #C22705; /* Set your text color */
+            text-decoration: none;
+            margin-left: 30px; /* Increased space between nav items */
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+            transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and size change */
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            color: #000; /* Change color on hover to green */
+            transform: scale(1.1); /* Enlarge on hover */
+        }
+
+        footer {
+            background-color: #000; /* Set your footer background color to black */
+            color: #fff; /* Set your text color to white */
+            padding: 20px;
+            text-align: center;
+            margin-top: auto; /* Push the footer to the bottom */
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 100px;
+            font-weight: bold;
+        }
+
+        footer a {
+            color: #fff; /* Set your text color */
+            text-decoration: none;
+            transition: color 0.3s ease; /* Smooth transition for color change */
+        }
+
+        footer a:hover {
+            color: #C22705; /* Change color on hover to green */
+        }
+
+        /* New Section Styles */
+        .body-section {
+            background: url('your-video-url.mp4'); /* Add your video URL here */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Place the video behind other elements */
+}
+
+        .section-title {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+        }
+
+        .section-subtitle3 {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+   
+
+   .section-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 60px;
+    background-color: #fff;
+}
+
+.left-part,
+.right-part {
+    flex: 1;
+}
+
+.left-part h3,
+.left-part p,
+.right-part h3,
+.right-part p {
+    margin-bottom: 15px;
+    text-align: left;
+    margin-left: 35px;
+    margin-top: 30px;
+}
+
+.left-part p {
+    margin-bottom: 15px;
+    text-align: left;
+    margin-left: 35px;
+    margin-top: 30px;
+}
+
+
+
+.left-part p,
+.right-part p {
+    margin-bottom: 15px;
+    text-align: left;
+    margin-left: 35px;
+    margin-top: 30px;
+    color: #000;
+}
+
+.image-space {
+    text-align: left;
+    margin-bottom: 30px;
+    max-width: 40%;
+}
+
+.image-space img {
+    width: 25%;
+    height: auto;
+    margin-top: 10px;
+    margin-right: 100px;
+    margin-left: 35px;
+}
+
+ /* New Section Styles */
+        .body-section {
+            background: url('your-video-url.mp4'); /* Add your video URL here */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Place the video behind other elements */
+}
+
+        .section-title {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+        }
+
+         /* Updated Styles for Options Container */
+    .options-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 90px;
+        margin-top: 80px;
+    }
+
+    .select-container {
+        position: relative;
+        margin-right: 10px;
+    }
+
+    .select-dropdown {
+        width: 520px;
+        padding: 20px;
+        font-size: 1.2em;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #fff;
+        color: #555;
+        font-weight: bold;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .select-dropdown::before {
+        content: '\25BC'; /* Unicode character for down arrow */
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        color: #555;
+    }
+
+    .search-button {
+        background-color: #C22705;
+        color: #fff;
+        padding: 15px 30px;
+        border: none;
+        cursor: pointer;
+        font-size: 1.2em;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .search-button:hover {
+        background-color: #000;
+    }
+
+        .learn-more-button {
+            background-color: #000;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2em;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        .learn-more-button:hover {
+        background-color: #C22705;
+    }
+
+
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div>
+        <!-- Make the logo clickable and redirect to Index.html -->
+        <a href="Index.html">
+            <img src="Findmy-removebg-preview.png" alt="Logo">
+        </a>
+
+    </div>
+    <nav>
+        <a href="Index.html">Search</a>
+        <a href="Register.html">Register</a>
+        <a href="Finance.html">Financing</a>
+        <a href="Advertise.html">Advertise</a>
+        <a href="LogIn.html">Log In</a>
+    </nav>
+</header>
+
+<!-- New Section -->
+<div class="body-section">
+
+    <video autoplay loop muted class="video-background">
+        <source src="truck.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="section-title">Actual Search Widget Samples, Try it now!</div>
+   
+ 
+    </div>
+
+  
+</div>
+<!-- End of New Section -->
+
+<!-- New Title and Image Space -->
+
+<div class="section-content">
+    <div class="left-part">
+        <h3>Search Widgets</h3>
+        <p>Provide your users with the ability to search for Truck Service, Truck Parts, Truck Stops and many other locations on your own website. Find Truck Service makes it easy and convenient for you to add this feature. The search widgets are completely FREE to use and available to everyone with a trucking related website. Our search widgets are designed to fit into any website or blog and make it seem like your own search or service you provide.</p>
+
+    </div>
+
+     
+
+    <div class="right-part">
+        <div class="right-content">
+            <h3>Android App</h3>
+            <p>With over 50,000 thousand downloads, Find Truck Service Android app is rated 4.5 stars.</p>
+            <div class="image-space">
+                <img src="android-vector-icon-553733187.jpg" >
+            </div>
+        </div>
+
+        <div class="right-content">
+            <h3>Apple iOS App</h3>
+            <p>With over 50,000 thousand downloads, Find Truck Service Android app is rated 4.5 stars.</p>
+            <div class="image-space">
+                <img src="418-4185530_appstore-icon-png-image-app-store-ios-icon-835786084.png" >
+            </div>
+        </div>
+
+       
+        </div>
+    </div>
+</div>
+<!-- End of New Title and Image Space -->
+
+</div>
+
+<!-- New Section -->
+<div class="body-section">
+
+    <video autoplay loop muted class="video-background">
+        <source src="truck.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="section-title">Find your nearest service</div>
+    <div class="section-subtitle">MOBILE - SHOPS - TOWING - TIRES - PARTS - DEALERS & MORE</div>
+
+    <!-- Updated Options Container Section -->
+    <div class="options-container">
+        <div class="select-container">
+            <select name="service-type" id="service-type" class="select-dropdown">
+                <option value="" disabled selected>Select Service Type</option>
+                <option value="mobile">Mobile</option>
+                <option value="shops">Shops</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        <div class="select-container">
+            <select name="service-location" id="service-location" class="select-dropdown">
+                <option value="" disabled selected>Where Do You Need Your Service?</option>
+                <option value="location1">Location 1</option>
+                <option value="location2">Location 2</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        <div>
+            <button class="search-button">Search</button>
+        </div>
+    </div>
+
+    
+</div>
+<!-- End of New Section -->
+
+
+
+
+
+
+
+
+<footer>
+    <ul>
+        <li><a href="About.html">ABOUT</a></li>
+        <li><a href="Contact.html">CONTACT</a></li>
+        <li><a href="Advertise.html">ADVERTISE</a></li>
+        <li><a href="Register.html">REGISTER</a></li>
+        <li><a href="Tools.html">TOOLS</a></li>
+        <li><a href="Widget.html">WIDGETS</a></li>
+        <li><a href="Finance.html">FINANCING</a></li>
+        <li><a href="Tools.html">TRUCKER APP</a></li>
+        <li><a href="#">GET AUTHORIZED!</a></li>
+    </ul>
+    <p>2020 Calamos Ct Suite 200, Naperville, IL 60563<br>
+    Phone: +1   ___  ____   ____</p>
+
+    <p>Copyright Find Truck Service® | Privacy Policy | Terms of Use | Advertiser Terms</p>
+</footer>
+
+</body>
+</html>

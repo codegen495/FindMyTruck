@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <link rel="icon" type="image/png" href="./assets/Findmy.png">
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Set your theme color */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Make sure the body takes at least the full height of the viewport */
+        }
+
+        header {
+            background-color: #fff; /* Set your header background color to black */
+            color: #fff; /* Set your text color to white */
+            padding: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header img {
+            width: 300px;
+        }
+
+        nav {
+            display: flex;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        nav a {
+            color: #C22705; /* Set your text color */
+            text-decoration: none;
+            margin-left: 30px; /* Increased space between nav items */
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+            transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and size change */
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            color: #000; /* Change color on hover to green */
+            transform: scale(1.1); /* Enlarge on hover */
+        }
+
+        footer {
+            background-color: #000; /* Set your footer background color to black */
+            color: #fff; /* Set your text color to white */
+            padding: 20px;
+            text-align: center;
+            margin-top: auto; /* Push the footer to the bottom */
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 100px;
+            font-weight: bold;
+        }
+
+        footer a {
+            color: #fff; /* Set your text color */
+            text-decoration: none;
+            transition: color 0.3s ease; /* Smooth transition for color change */
+        }
+
+        footer a:hover {
+            color: #C22705; /* Change color on hover to green */
+        }
+
+        /* New Section Styles */
+        .body-section {
+            background: url('your-video-url.mp4'); /* Add your video URL here */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Place the video behind other elements */
+}
+
+        .section-title {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+        }
+
+        .section-subtitle3 {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+         /* Updated Styles for Options Container */
+    .options-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 90px;
+        margin-top: 80px;
+    }
+
+    .select-container {
+        position: relative;
+        margin-right: 10px;
+    }
+
+    .select-dropdown {
+        width: 520px;
+        padding: 20px;
+        font-size: 1.2em;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #fff;
+        color: #555;
+        font-weight: bold;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .select-dropdown::before {
+        content: '\25BC'; /* Unicode character for down arrow */
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        color: #555;
+    }
+
+    .search-button {
+        background-color: #C22705;
+        color: #fff;
+        padding: 15px 30px;
+        border: none;
+        cursor: pointer;
+        font-size: 1.2em;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        margin-left: 330px;
+    }
+
+    .search-button:hover {
+        background-color: #000;
+    }
+    .search-button1 {
+        background-color: #C22705;
+        color: #fff;
+        padding: 15px 30px;
+        border: none;
+        cursor: pointer;
+        font-size: 1.2em;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .search-button1:hover {
+        background-color: #000;
+    }
+
+     .search-button5 {
+        background-color: #C22705;
+        color: #fff;
+        padding: 15px 30px;
+        border: none;
+        cursor: pointer;
+        font-size: 1.2em;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        margin-bottom: 150px;
+        margin-left: 30px;
+        margin-top: 45px;
+        text-decoration: none;
+    }
+
+    .search-button5:hover {
+        background-color: #000;
+        text-decoration: none;
+    }
+   
+
+        .learn-more-button {
+            background-color: #000;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2em;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        .learn-more-button:hover {
+        background-color: #C22705;
+    }
+
+
+.additional-section {
+    background-color: #f0f0f0; /* Set your desired background color */
+    color: #000; /* Set your text color */
+    padding: 50px;
+    text-align: center;
+}
+
+   .section-title4 {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color:#C22705 ;
+        }
+
+        .section-subtitle4 {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+        }
+
+        .section-subtitle6 {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .features-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 40px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        margin-top: 100px;
+    }
+
+    .feature-item {
+        border: 1px solid #C22705;
+        padding: 35px;
+        border-radius: 10px;
+        transition: background-color 0.3s ease;
+    }
+
+    .feature-item:hover {
+        background-color: #B60C0C;
+        color: #fff;
+    }
+
+    .feature-item h3 {
+        font-size: 1.9em;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    .feature-item p {
+        font-size: 1.5em;
+        color: #000;
+    }
+
+    .feature-item p:hover {
+      
+        color: #fff;
+    }
+
+.section-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 0px;
+    background-color: #fff;
+}
+
+.left-part,
+.right-part {
+    flex: 1;
+}
+
+.left-part h3,
+
+.right-part h3
+ {
+    margin-bottom: 15px;
+    text-align: left;
+    margin-left: 40px;
+    margin-top: 30px;
+    color:#C22705 ;
+    font-size: 1.5em;
+}
+
+.left-part h4,
+
+.right-part h4
+ {
+    margin-bottom: 15px;
+    text-align: left;
+    margin-left: 40px;
+    margin-top: 30px;
+    color:#000 ;
+    font-size: 1.2em;
+}
+
+.left-part p {
+    margin-bottom: 35px;
+    text-align: left;
+    margin-left: 35px;
+    margin-top: 30px;
+}
+
+
+
+.left-part p,
+.right-part p {
+    margin-bottom: 15px;
+    text-align: left;
+    margin-left: 35px;
+    margin-top: 30px;
+    color: #000;
+}
+
+.image-space {
+    text-align: left;
+    margin-bottom: 30px;
+    max-width: 40%;
+}
+
+.image-space img {
+    width: 25%;
+    height: auto;
+    margin-top: 10px;
+    margin-right: 100px;
+    margin-left: 35px;
+}
+
+/* Add styles for the specific ID */
+#owner-info {
+    font-weight: bold;
+    font-size: 1em;
+    color: #000; /* Set your desired text color */
+    /* Add any additional styles you want */
+}
+
+.body-section3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 0px;
+    background-color: #fff;
+}
+
+  .section-title5 {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color:#C22705 ;
+            margin-left: 300px;
+            margin-top: 50px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div>
+        <!-- Make the logo clickable and redirect to Index.html -->
+        <a href="Index.html">
+            <img src="Findmy-removebg-preview.png" alt="Logo">
+        </a>
+
+    </div>
+    <nav>
+        <a href="Index.html">Search</a>
+        <a href="Register.html">Register</a>
+        <a href="Finance.html">Financing</a>
+        <a href="Advertise.html">Advertise</a>
+        <a href="LogIn.html">Log In</a>
+    </nav>
+</header>
+
+<!-- New Section -->
+<div class="body-section">
+
+    <video autoplay loop muted class="video-background">
+        <source src="truck.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="section-title">Truck Repair Financing</div>
+    <div class="section-subtitle">Get service today and pay over time. Nationwide financing options available.</div>
+    <div class="section-subtitle3">Get a decision in seconds with no impact to your credit score.</div>
+
+
+    <!-- Updated Options Container Section -->
+    <div class="options-container">
+       
+        <div>
+            <button class="search-button">See if you PREQUALIFY</button>
+            <button class="search-button1">See our PROMOTIONS</button>
+        </div>
+    </div>
+
+  
+</div>
+<!-- End of New Section -->
+
+<!-- ... (Previous HTML) ... -->
+
+<!-- New Section Below Existing Content -->
+<div class="additional-section">
+    <div class="section-title4">Exclusive Cardholder Benefits</div>
+    <div class="section-subtitle4">Make easy monthly payments on all your truck repair and parts purchases of $199 or more with 6 months special financing*. This is your everyday cardholder benefit, nationwide at more than 500,000 locations!
+</div>
+
+       <ul class="features-list">
+        <li class="feature-item">
+            <h3>6 Months Special Financing</h3>
+            <p>No Interest if Paid in Full within 6 Months** on purchases of $199 or more made with your Find Truck Service credit card. Interest will be charged to your account from the purchase date if the promo purchase is not paid in full within 6 months*.</p>
+        </li>
+
+        <li class="feature-item">
+            <h3>Up to $10,000 Credit Limit</h3>
+            <p>As an owner-operator you need a dedicated high line of credit that meets your heavy duty service, parts and maintenance needs. The Find Truck Service®️ credit card can help your cash flow with up to $10,000 in credit limit.</p>
+        </li>
+
+        <li class="feature-item">
+            <h3>Exclusive Discounts</h3>
+            <p>Find Truck Service runs exclusive cardholders discounts, promotions and rebates throughout the year at our Authorized locations to help you save money on routine maintenance, truck service and truck parts purchases.</p>
+        </li>
+
+        <li class="feature-item">
+            <h3>Authorize Your Vendors</h3>
+            <p>If your preferred locations are not authorized with us yet so that you can use our rebates there, no worries, we'll make it a priority to get them authorized. Simply let them know to contact Find Truck Service and get setup, it's FREE.</p>
+        </li>
+
+        <li class="feature-item">
+            <h3>Accepted Nationwide</h3>
+            <p>You can use your Find Truck Service credit card to pay for all your truck service, equipment repairs, accessories, parts and even your passenger car repairs at more than 500,000 locations nationwide.</p>
+        </li>
+
+        <li class="feature-item">
+            <h3>Manage Account Online</h3>
+            <p>We are aware that owner-operators spend a lot of time away from home and on the road which can be very inconvenient to manage accounts and payments. The Find Truck Service credit card helps you do it online.</p>
+        </li>
+    </ul>
+
+      <!-- Updated Options Container Section -->
+    <div class="options-container">
+       
+        <div>
+            <button class="search-button">See if you PREQUALIFY</button>
+            <button class="search-button1">See our PROMOTIONS</button>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- New Title and Image Space -->
+
+<div class="section-content">
+    <div class="left-part">
+        <h3>Helping Owner-Operators since 2007!</h3>
+        <p>Find Truck Service® started in 2007 and over the past decade our service locators have helped owner-operators and trucking companies manage millions of breakdowns and nationwide repairs. Today, we are excited to offer our industry owner-operators the Find Truck Service® credit card which helps them better manage service and parts expenses by paying for them over time.</p>
+
+        <h3>Did you know?</h3>
+        <p>Find Truck Service® can help you locate more than 30,000 truck services and POI nationwide.</p>
+
+         
+         <a href="Index.html" class="search-button5">Find Truck Service® Search</a>
+    </div>
+
+    <div class="right-part">
+        <div class="right-content">
+            <h3>What Owner-Operators Say</h3>
+            <p>I would call my company when I needed service before and they would give me numbers to call, most were far from me, I thought I had no choice. After finding your website I realized doing it myself is faster and cheaper.</p>
+
+            <p id="owner-info">Vele M. - Owner-Operator</p>
+
+            <br>
+
+            <p>This is one of the greatest apps I have ever had the privilege of using. I was looking at the reviews and I agree with the praise of this app. This app is an asset for all professional drivers and owner-operators.</p>
+
+            <p id="owner-info">Gary D. - Owner-Operator</p>
+
+            
+        </div>
+    </div>
+</div>
+<!-- End of New Title and Image Space -->
+
+<!-- Second Section -->
+<div class="body-section3">
+    <!-- ... (Previous items) ... -->
+
+    <div class="section-title5">Why choose Find My Truck?</div>
+
+</div>
+
+   <div class="section-content">
+    <div class="left-part">
+        <h4>WHAT IS THE FIND TRUCK SERVICE CREDIT CARD?</h4>
+        <p>Find Truck Service offers customers a credit card through Synchrony Bank with a revolving credit line of up to $10,000 to use again and again for services and parts at all Find Truck Service Authorized vendor locations.*</p>
+
+        <h4>WHERE DO I CHECK THE STATUS OF MY ACCOUNT?</h4>
+        <p>To check the status of your Find Truck Service credit card account, click on the Manage My Account button below to go to the Synchrony Bank website. After logging into your account, you will be able to:
+
+            <br>
+            <br>
+
+• Make a payment
+ <br>
+• View your balance
+<br>
+• Update your account information
+<br>
+• Schedule up to your next 12 payments</p>
+
+         <button class="search-button5">Manage My Account</button>
+    </div>
+
+    <div class="right-part">
+        <div class="right-content">
+            <h4> HOW DO I APPLY FOR A FIND TRUCK SERVICE CREDIT CARD?</h4>
+        <p>You can apply for a Find Truck Service credit card online by clicking here and get a fast credit decision or you can visit any of our Authorized vendor locations to apply in person.</p>
+
+        <h4>HOW DO I REQUEST A LIMIT INCREASED AFTER I APPLY?</h4>
+        <p>You can simply call 866-657-0376 to request a credit limit increase on your online approval.</p>
+
+        <h4>HOW DO I PAY MY FIND TRUCK SERVICE CREDIT CARD?</h4>
+        <p>There are three convenient ways to pay your bill.
+
+            <br>
+<br>
+
+
+• Pay Online: Click here to manage your account and make payments online.
+<br>
+
+
+• Pay by Phone: Contact Synchrony Bank Customer Service 866-657-0376 during the hours listed below to make a payment by phone.
+<br>
+
+Mon – Sunday 7:30 am to 12:00 midnight EST
+<br>
+
+
+• Pay by Mail: Mail payments to the address below. Ensure that you have plenty of time for your payment to arrive prior to the due date.<br>
+<br>
+
+Synchrony Bank P.O. Box 960061 Orlando, FL 32896-0061</p>
+
+         
+    </div>
+    </div>
+
+</div>
+
+<!-- New Section Below Existing Content -->
+<div class="additional-section">
+    
+    <div class="section-subtitle6">* Subject to credit approval. Minimum monthly payments required.
+</div>
+
+ <div class="section-subtitle6">** Offer applies only to single-receipt qualifying purchases. No interest will be charged on the promo purchase if you pay it off, in full, within the promo period. If you do not, interest will be charged on the promo purchase from the purchase date. The required minimum monthly payments may or may not pay off the promo purchase by the end of the promo period. Regular account terms apply to non-promo purchases and, after promo period ends, to the remaining promo balance. For new accounts: Purchase APR is 29.99%. Minimum interest charge is $2. Existing cardholders: See your credit card agreement terms. Subject to credit approval.
+</div>
+
+ 
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+<footer>
+    <ul>
+        <li><a href="About.html">ABOUT</a></li>
+        <li><a href="Contact.html">CONTACT</a></li>
+        <li><a href="Advertise.html">ADVERTISE</a></li>
+        <li><a href="Register.html">REGISTER</a></li>
+        <li><a href="Tools.html">TOOLS</a></li>
+        <li><a href="Widget.html">WIDGETS</a></li>
+        <li><a href="Finance.html">FINANCING</a></li>
+        <li><a href="Tools.html">TRUCKER APP</a></li>
+        <li><a href="#">GET AUTHORIZED!</a></li>
+    </ul>
+    <p>2020 Calamos Ct Suite 200, Naperville, IL 60563<br>
+    Phone: +1   ___  ____   ____</p>
+
+    <p>Copyright Find Truck Service® | Privacy Policy | Terms of Use | Advertiser Terms</p>
+</footer>
+
+</body>
+</html>

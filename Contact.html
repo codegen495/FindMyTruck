@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <link rel="icon" type="image/png" href="./assets/Findmy.png">
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Set your theme color */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Make sure the body takes at least the full height of the viewport */
+        }
+
+        header {
+            background-color: #fff; /* Set your header background color to black */
+            color: #fff; /* Set your text color to white */
+            padding: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header img {
+            width: 300px;
+        }
+
+        nav {
+            display: flex;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        nav a {
+            color: #C22705; /* Set your text color */
+            text-decoration: none;
+            margin-left: 30px; /* Increased space between nav items */
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+            transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and size change */
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            color: #000; /* Change color on hover to green */
+            transform: scale(1.1); /* Enlarge on hover */
+        }
+
+        footer {
+            background-color: #000; /* Set your footer background color to black */
+            color: #fff; /* Set your text color to white */
+            padding: 20px;
+            text-align: center;
+            margin-top: auto; /* Push the footer to the bottom */
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 100px;
+            font-weight: bold;
+        }
+
+        footer a {
+            color: #fff; /* Set your text color */
+            text-decoration: none;
+            transition: color 0.3s ease; /* Smooth transition for color change */
+        }
+
+        footer a:hover {
+            color: #C22705; /* Change color on hover to green */
+        }
+
+        /* New Section Styles */
+        .body-section {
+            background: url('your-video-url.mp4'); /* Add your video URL here */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Place the video behind other elements */
+}
+
+        .section-title {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+        }
+
+        .section-subtitle3 {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+         /* Updated Styles for Options Container */
+    .options-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 90px;
+        margin-top: 80px;
+    }
+
+    .select-container {
+        position: relative;
+        margin-right: 10px;
+    }
+
+    .select-dropdown {
+        width: 520px;
+        padding: 20px;
+        font-size: 1.2em;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #fff;
+        color: #555;
+        font-weight: bold;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .select-dropdown::before {
+        content: '\25BC'; /* Unicode character for down arrow */
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        color: #555;
+    }
+
+    .search-button {
+        background-color: #C22705;
+        color: #fff;
+        padding: 15px 30px;
+        border: none;
+        cursor: pointer;
+        font-size: 1.2em;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        margin-left: 330px;
+    }
+
+    .search-button:hover {
+        background-color: #000;
+    }
+    .search-button1 {
+        background-color: #C22705;
+        color: #fff;
+        padding: 15px 30px;
+        border: none;
+        cursor: pointer;
+        font-size: 1.2em;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .search-button1:hover {
+        background-color: #000;
+    }
+
+     .search-button5 {
+        background-color: #C22705;
+        color: #fff;
+        padding: 15px 30px;
+        border: none;
+        cursor: pointer;
+        font-size: 1.2em;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        margin-bottom: 150px;
+        margin-left: 30px;
+        margin-top: 45px;
+        text-decoration: none;
+    }
+
+    .search-button5:hover {
+        background-color: #000;
+        text-decoration: none;
+    }
+   
+
+        .learn-more-button {
+            background-color: #000;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2em;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        .learn-more-button:hover {
+        background-color: #C22705;
+    }
+
+
+.section-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 60px;
+
+}
+
+.left-part,
+.right-part {
+    flex: 1;
+}
+
+.left-part h3,
+.left-part p,
+.right-part h3,
+.right-part p {
+    margin-bottom: 15px;
+    text-align: left;
+    margin-left: 35px;
+    margin-top: 30px;
+}
+
+.left-part p {
+    margin-bottom: 15px;
+    text-align: left;
+    margin-left: 35px;
+    margin-top: 30px;
+}
+
+
+
+.left-part p,
+.right-part p {
+    margin-bottom: 15px;
+    text-align: left;
+    margin-left: 35px;
+    margin-top: 30px;
+    color: #000;
+}
+
+.image-space {
+    text-align: left;
+    margin-bottom: 30px;
+    max-width: 40%;
+}
+
+.image-space img {
+    width: 25%;
+    height: auto;
+    margin-top: 10px;
+    margin-right: 100px;
+    margin-left: 35px;
+}
+.body-section2 {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 50px;
+    background-color: #fff;
+
+}
+
+.left-part {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.left-part h2 {
+    margin-bottom: 20px;
+    color: #C22705;
+    margin-left: -3px;
+}
+
+.right-part h2 {
+    margin-bottom: 20px;
+    color: #C22705;
+    margin-left: -3px;
+    text-align: left;
+}
+
+.left-part p {
+    margin-bottom: 20px;
+    color: #333;
+    margin-left: -8px;
+}
+
+.contact-form {
+    max-width: 400px;
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-left: -3px;
+    padding-right: 50px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+    margin-top: 6px;
+    margin-left: -20px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+    margin-top: 6px;
+    margin-right: 5px;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: -20px;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #C22705;
+
+
+}
+
+button {
+    background-color: #C22705;
+    color: #fff;
+    padding: 18px 33px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    margin-top: 15px;
+    font-size: 20px;
+    margin-left: -20px;
+    margin-bottom: -50px;
+}
+
+button:hover {
+    background-color: #000;
+}
+
+.right-part {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-space {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.image-space1 img {
+    width: 50%; /* Increase the image width */
+    max-width: 200%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 35px;
+    margin-top: 130px;
+    margin-left: 70px;
+}
+
+
+
+
+
+
+.company-address {
+    text-align: left;
+    color: #555;
+    background-color: #fff;
+    padding: 60px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-top: 200px;
+    font-weight: bold;
+    margin-left: -150px;
+}
+
+.company-address p {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    margin-left: -20px;
+}
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div>
+        <!-- Make the logo clickable and redirect to Index.html -->
+        <a href="Index.html">
+            <img src="Findmy-removebg-preview.png" alt="Logo">
+        </a>
+
+    </div>
+    <nav>
+        <a href="Index.html">Search</a>
+        <a href="Register.html">Register</a>
+        <a href="Finance.html">Financing</a>
+        <a href="Advertise.html">Advertise</a>
+        <a href="LogIn.html">Log In</a>
+    </nav>
+</header>
+
+<!-- New Section -->
+<div class="body-section">
+
+    <video autoplay loop muted class="video-background">
+        <source src="truck.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="section-title">Contact Find Truck Service®</div>
+    <div class="section-title">847-586-9110</div>
+ 
+    </div>
+
+  
+</div>
+<!-- End of New Section -->
+
+<!-- New Section -->
+<div class="body-section2">
+    <!-- Left Part -->
+    <div class="left-part">
+        <h2>Got more questions?</h2>
+        <p>If you have more questions, please feel free to call us or use the form below to let us know.</p>
+
+        <!-- Contact Form -->
+        <form class="contact-form">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name">
+
+            <label for="name">Your Company Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your company name">
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address">
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+
+            <label for="phone">Subject:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Selct Your Subject">
+
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" placeholder="Type your message here"></textarea>
+
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <!-- Right Part -->
+    <div class="right-part">
+        
+        <h2>Get in touch today!</h2>
+        <p>You may use our contact form to send us a direct message.
+
+            <br>
+
+Please include details regarding your inquiry and one of our customer service representatives or vendor specialists will contact you shortly.
+ <br>
+  <br>
+   <br>
+You're welcome to call us, you can always reach us by phone during our business hours.
+ <br>
+  <br>
+Thank You,
+Find Truck Service team!</p>
+
+        <!-- Company Address -->
+        <div class="company-address">
+            <p>Find My Truck, Inc<br>
+            2030 E. Algonquin Road<br>
+            Suite 404<br>
+            Schaumburg, IL 60173</p>
+            <p>Phone Number: (888) 586-4788 Toll Free</p>
+            <p>OFFICE HOURS
+               MON-FRI: 8:00am-4:30pm</p>
+        </div>
+    </div>
+</div>
+<!-- End of New Section -->
+
+
+
+
+
+
+
+
+
+<footer>
+    <ul>
+        <li><a href="About.html">ABOUT</a></li>
+        <li><a href="Contact.html">CONTACT</a></li>
+        <li><a href="Advertise.html">ADVERTISE</a></li>
+        <li><a href="Register.html">REGISTER</a></li>
+        <li><a href="Tools.html">TOOLS</a></li>
+        <li><a href="Widget.html">WIDGETS</a></li>
+        <li><a href="Finance.html">FINANCING</a></li>
+        <li><a href="Tools.html">TRUCKER APP</a></li>
+        <li><a href="#">GET AUTHORIZED!</a></li>
+    </ul>
+    <p>2020 Calamos Ct Suite 200, Naperville, IL 60563<br>
+    Phone: +1   ___  ____   ____</p>
+
+    <p>Copyright Find Truck Service® | Privacy Policy | Terms of Use | Advertiser Terms</p>
+</footer>
+
+</body>
+</html>

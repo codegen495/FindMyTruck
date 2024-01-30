@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find My Truck!</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <link rel="icon" type="image/png" href="./assets/Findmy.png">
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Set your theme color */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Make sure the body takes at least the full height of the viewport */
+        }
+
+        header {
+            background-color: #fff; /* Set your header background color to black */
+            color: #fff; /* Set your text color to white */
+            padding: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header img {
+            width: 300px;
+        }
+
+        nav {
+            display: flex;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        nav a {
+            color: #C22705; /* Set your text color */
+            text-decoration: none;
+            margin-left: 30px; /* Increased space between nav items */
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+            transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and size change */
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            color: #000; /* Change color on hover to green */
+            transform: scale(1.1); /* Enlarge on hover */
+        }
+
+        footer {
+            background-color: #000; /* Set your footer background color to black */
+            color: #fff; /* Set your text color to white */
+            padding: 20px;
+            text-align: center;
+            margin-top: auto; /* Push the footer to the bottom */
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 100px;
+            font-weight: bold;
+        }
+
+        footer a {
+            color: #fff; /* Set your text color */
+            text-decoration: none;
+            transition: color 0.3s ease; /* Smooth transition for color change */
+        }
+
+        footer a:hover {
+            color: #C22705; /* Change color on hover to green */
+        }
+
+        /* New Section Styles */
+        .body-section {
+            background: url('your-video-url.mp4'); /* Add your video URL here */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Place the video behind other elements */
+}
+
+        .section-title {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+        }
+
+         /* Updated Styles for Options Container */
+    .options-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 90px;
+        margin-top: 80px;
+    }
+
+    .select-container {
+        position: relative;
+        margin-right: 10px;
+    }
+
+    .select-dropdown {
+        width: 520px;
+        padding: 20px;
+        font-size: 1.2em;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #fff;
+        color: #555;
+        font-weight: bold;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .select-dropdown::before {
+        content: '\25BC'; /* Unicode character for down arrow */
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        color: #555;
+    }
+
+    .search-button {
+        background-color: #C22705;
+        color: #fff;
+        padding: 15px 30px;
+        border: none;
+        cursor: pointer;
+        font-size: 1.2em;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .search-button:hover {
+        background-color: #000;
+    }
+
+        .learn-more-button {
+            background-color: #000;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2em;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        .learn-more-button:hover {
+        background-color: #C22705;
+    }
+
+  /* Additional CSS for the white background section */
+.white-background-section {
+    background-color: #fff;
+    padding: 50px;
+    text-align: center;
+}
+
+.logos-container {
+    display: flex;
+    overflow: hidden;
+}
+
+.logos-container img {
+    width: 200px;
+    margin-right: 40px; /* Adjust the margin value for spacing between logos */
+    animation: horizontalRotate 40s linear infinite;
+}
+
+@keyframes horizontalRotate {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Additional CSS for the new section */
+.white-background-section {
+    background-color: #fff;
+    padding: 50px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+
+.left-section img {
+    width: 120%; /* Adjust the width as needed */
+    margin-bottom: 100px;
+    margin-left: -30px;
+    margin-top: 30px;
+}
+
+.right-section {
+    flex-grow: 1;
+    padding-left: 20px; /* Adjust the padding as needed */
+    margin-left: 30px;
+}
+
+.section-title {
+    font-size: 4em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 70px;
+    color:#C22705 ;
+}
+
+.section-subtitle {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.features-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Adjust the min and max values as needed */
+    gap: 10px; /* Adjust the gap between boxes */
+    list-style: none;
+    padding: 0;
+    margin-bottom: 200px;
+}
+
+.features-list li {
+    font-size: 1em;
+    background-color: #ddd; /* Adjust the background color as needed */
+    padding: 10px; /* Adjust the padding as needed */
+    text-align: center;
+}
+
+/* Additional CSS for the new section */
+.send-app-section {
+    display: flex;
+    align-items: center;
+    margin-top: -100px;
+    margin-bottom: 200px;
+   
+}
+
+.dot-line-space {
+    width: 230px; /* Adjust the width of the dot line space */
+    height: 2px; /* Adjust the height of the dot line space */
+    background-color: #000; /* Adjust the color of the dot line space */
+    margin: 0 10px; /* Adjust the margin around the dot line space */
+}
+
+.send-button {
+    background-color: #C22705;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.send-button:hover {
+    background-color: #000;
+}
+
+
+
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div>
+        <!-- Make the logo clickable and redirect to Index.html -->
+        <a href="Index.html">
+            <img src="Findmy-removebg-preview.png" alt="Logo">
+        </a>
+
+    </div>
+    <nav>
+        <a href="Index.html">Search</a>
+        <a href="Register.html">Register</a>
+        <a href="Finance.html">Financing</a>
+        <a href="Advertise.html">Advertise</a>
+        <a href="LogIn.html">Log In</a>
+    </nav>
+</header>
+
+<!-- New Section -->
+<div class="body-section">
+
+    <video autoplay loop muted class="video-background">
+        <source src="truck.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="section-title">Find your nearest service</div>
+    <div class="section-subtitle">MOBILE - SHOPS - TOWING - TIRES - PARTS - DEALERS & MORE</div>
+
+    <!-- Updated Options Container Section -->
+    <div class="options-container">
+        <div class="select-container">
+            <select name="service-type" id="service-type" class="select-dropdown">
+                <option value="" disabled selected>Select Service Type</option>
+                <option value="mobile">Mobile</option>
+                <option value="shops">Shops</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        <div class="select-container">
+            <select name="service-location" id="service-location" class="select-dropdown">
+                <option value="" disabled selected>Where Do You Need Your Service?</option>
+                <option value="location1">Location 1</option>
+                <option value="location2">Location 2</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        <div>
+            <button class="search-button">Search</button>
+        </div>
+    </div>
+
+    <div>
+        <p>Nationwide Truck Repair Service</p>
+        <button class="learn-more-button">Learn More</button>
+    </div>
+</div>
+<!-- End of New Section -->
+
+<!-- New Section with Plain White Background -->
+<div class="white-background-section">
+    <div class="logos-container">
+        <img src="4-mont-blanc.jpg" alt="Logo 1">
+        <img src="5-bentley.png" alt="Logo 2">
+        <img src="7-nike.jpg" alt="Logo 3">
+        <img src="8-converse.jpg" alt="Logo 4">
+        <img src="11-armani.jpg" alt="Logo 5">
+        
+        
+        <!-- Repeat logos as needed -->
+        <!-- ... -->
+    </div>
+</div>
+<!-- End of New Section with Plain White Background -->
+
+<!-- New Section with Title, Subtitle, and Features -->
+<div class="white-background-section">
+    <div class="left-section">
+        <!-- Space for Image (Add your image source here) -->
+        <img src="splashcreens.png" alt="Image">
+    </div>
+    <div class="right-section">
+        <div class="section-title">#1 Truck Breakdown app</div>
+        <div class="section-subtitle">Manage Truck Breakdowns, OTR Repairs and Maintenance on the go, download our Free trucking app!</div>
+        <ul class="features-list">
+            <li>Road Service</li>
+            <li>Truck Repair</li>
+            <li>Tire Repair</li>
+            <li>Towing Service</li>
+            <li>Truck Shops</li>
+            <li>Tire Shops</li>
+            <li>Trailer Shops</li>
+            <li>Truck Stops & More</li>
+        </ul>
+
+   <!-- Send App Text and Button -->
+        <div class="send-app-section">
+            <span>Send the app to any phone:</span>
+            <div class="dot-line-space"></div>
+            <button class="send-button">Send</button>
+        </div>
+    </div>
+</div>
+<!-- End of New Section with Title, Subtitle, and Features -->
+
+
+<footer>
+    <ul>
+        <li><a href="About.html">ABOUT</a></li>
+        <li><a href="Contact.html">CONTACT</a></li>
+        <li><a href="Advertise.html">ADVERTISE</a></li>
+        <li><a href="Register.html">REGISTER</a></li>
+        <li><a href="Tools.html">TOOLS</a></li>
+        <li><a href="Widget.html">WIDGETS</a></li>
+        <li><a href="Finance.html">FINANCING</a></li>
+        <li><a href="Tools.html">TRUCKER APP</a></li>
+        <li><a href="#">GET AUTHORIZED!</a></li>
+    </ul>
+    <p>2020 Calamos Ct Suite 200, Naperville, IL 60563<br>
+    Phone: +1   ___  ____   ____</p>
+
+    <p>Copyright Find Truck Service® | Privacy Policy | Terms of Use | Advertiser Terms</p>
+</footer>
+
+</body>
+</html>

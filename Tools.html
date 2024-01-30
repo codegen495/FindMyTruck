@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <link rel="icon" type="image/png" href="./assets/Findmy.png">
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Set your theme color */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Make sure the body takes at least the full height of the viewport */
+        }
+
+        header {
+            background-color: #fff; /* Set your header background color to black */
+            color: #fff; /* Set your text color to white */
+            padding: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header img {
+            width: 300px;
+        }
+
+        nav {
+            display: flex;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        nav a {
+            color: #C22705; /* Set your text color */
+            text-decoration: none;
+            margin-left: 30px; /* Increased space between nav items */
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+            transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and size change */
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            color: #000; /* Change color on hover to green */
+            transform: scale(1.1); /* Enlarge on hover */
+        }
+
+        footer {
+            background-color: #000; /* Set your footer background color to black */
+            color: #fff; /* Set your text color to white */
+            padding: 20px;
+            text-align: center;
+            margin-top: auto; /* Push the footer to the bottom */
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 100px;
+            font-weight: bold;
+        }
+
+        footer a {
+            color: #fff; /* Set your text color */
+            text-decoration: none;
+            transition: color 0.3s ease; /* Smooth transition for color change */
+        }
+
+        footer a:hover {
+            color: #C22705; /* Change color on hover to green */
+        }
+
+        /* New Section Styles */
+        .body-section {
+            background: url('your-video-url.mp4'); /* Add your video URL here */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Place the video behind other elements */
+}
+
+        .section-title {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+        }
+
+        .section-subtitle3 {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .body-section1 {
+        background-color: #fff; /* Set your section background color */
+        color: #000; /* Set your section text color */
+        padding: 0px;
+        text-align: center;
+        width: 100%;
+    }
+
+     .section-title1 {
+            font-size: 4em;
+            font-weight: bold;
+            margin-bottom: 30px;
+            margin-top: 70px;
+            color:#C22705 ;
+        }
+
+
+   
+ .features-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 60px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        margin-top: 100px;
+        margin-bottom: 50px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .feature-item {
+        border: 1px solid #C22705;
+        padding: 25px;
+        border-radius: 10px;
+        transition: background-color 0.3s ease;
+    }
+
+    .feature-item:hover {
+        background-color: #B60C0C;
+        color: #fff;
+    }
+
+    .feature-item h3 {
+        font-size: 1.9em;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    .feature-item p {
+        font-size: 1.1em;
+        color: #000;
+    }
+
+    .feature-item p:hover {
+      
+        color: #fff;
+    }
+
+
+   
+
+
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div>
+        <!-- Make the logo clickable and redirect to Index.html -->
+        <a href="Index.html">
+            <img src="Findmy-removebg-preview.png" alt="Logo">
+        </a>
+
+    </div>
+    <nav>
+        <a href="Index.html">Search</a>
+        <a href="Register.html">Register</a>
+        <a href="Finance.html">Financing</a>
+        <a href="Advertise.html">Advertise</a>
+        <a href="LogIn.html">Log In</a>
+    </nav>
+</header>
+
+<!-- New Section -->
+<div class="body-section">
+
+    <video autoplay loop muted class="video-background">
+        <source src="truck.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="section-title">Multiple Smartphone Applications,
+Mobile Site & Search Widgets</div>
+   
+ 
+    </div>
+
+  
+</div>
+<!-- End of New Section -->
+
+<!-- Second Section -->
+<div class="body-section1">
+    <!-- ... (Previous items) ... -->
+
+    <div class="section-title1">Find Truck Service Mobile Apps</div>
+
+    <ul class="features-list">
+        <li class="feature-item">
+            <h3>Android App</h3>
+            <p>Find Truck Service Android Native App has been carefuly designed and developed to help drivers on the road. It provides many benifits</p>
+        </li>
+
+        <li class="feature-item">
+            <h3>IOS App</h3>
+            <p>Find Truck Service iOS Native App. A great tool for all drivers that use the iPhone. Available for all screens and all versions.</p>
+        </li>
+
+        <li class="feature-item">
+            <h3>Windows App</h3>
+            <p>Find Truck Services is also available for all Windows devices.</p>
+        </li>
+
+        <li class="feature-item">
+            <h3>Mobile App</h3>
+            <p>Find Truck Service mobile website can be accessed from all internet enabled browsers. Our mobile website looks, feels and functions like an app! Visit FindTruckService.com from any Smartphone or Tablet and you will be redirected to our mobile website. It's Fast & Simple to use, try it on your device!</p>
+        </li>
+
+        <li class="feature-item">
+            <h3>My DAT</h3>
+            <p>Find Truck Service is integrated with My DAT Trucker Services! My DAT Trucker Services is the most popular app in the industry and it's been downloaded by nearly 200,000 truck drivers nationwide! You can locate all Find Truck Service Vendors and Truck Loads, Truck Stops & Prices, Truck Wash, Scales, Walmarts, and Nationwide Trucker Friendly Hotel Locations.</p>
+        </li>
+
+        <li class="feature-item">
+            <h3>Tablet Support</h3>
+            <p>Find Truck Service apps have been designed to be compatable with all tablets. Users using Find Truck Service on tablet will experience a dynamic experience.</p>
+        </li>
+    </ul>
+
+    <!-- First Section -->
+<div class="body-section">
+
+  
+    <div class="section-title1">We make it fast and easy to Find Truck Service!</div>
+    <img src="istockphoto-1096124416-612x612.jpg" alt="Image" style="width: 50%; margin-top: 20px; margin-bottom: 20px;">
+    <img src="2c31d469a6a2f16c85058c0c8ccb20fb-removebg-preview.png" alt="Image" style="width: 19%; margin-top: -50px; margin-bottom: 20px;">
+    <!-- End of New Title and Image Space -->
+
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+<footer>
+    <ul>
+        <li><a href="About.html">ABOUT</a></li>
+        <li><a href="Contact.html">CONTACT</a></li>
+        <li><a href="Advertise.html">ADVERTISE</a></li>
+        <li><a href="Register.html">REGISTER</a></li>
+        <li><a href="Tools.html">TOOLS</a></li>
+        <li><a href="Widget.html">WIDGETS</a></li>
+        <li><a href="Finance.html">FINANCING</a></li>
+        <li><a href="Tools.html">TRUCKER APP</a></li>
+        <li><a href="#">GET AUTHORIZED!</a></li>
+    </ul>
+    <p>2020 Calamos Ct Suite 200, Naperville, IL 60563<br>
+    Phone: +1   ___  ____   ____</p>
+
+    <p>Copyright Find Truck Service® | Privacy Policy | Terms of Use | Advertiser Terms</p>
+</footer>
+
+</body>
+</html>

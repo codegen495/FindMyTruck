@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <link rel="icon" type="image/png" href="./assets/Findmy.png">
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Set your theme color */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Make sure the body takes at least the full height of the viewport */
+        }
+
+        header {
+            background-color: #fff; /* Set your header background color to black */
+            color: #fff; /* Set your text color to white */
+            padding: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header img {
+            width: 300px;
+        }
+
+        nav {
+            display: flex;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        nav a {
+            color: #C22705; /* Set your text color */
+            text-decoration: none;
+            margin-left: 30px; /* Increased space between nav items */
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+            transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and size change */
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            color: #000; /* Change color on hover to green */
+            transform: scale(1.1); /* Enlarge on hover */
+        }
+
+        footer {
+            background-color: #000; /* Set your footer background color to black */
+            color: #fff; /* Set your text color to white */
+            padding: 20px;
+            text-align: center;
+            margin-top: auto; /* Push the footer to the bottom */
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 100px;
+            font-weight: bold;
+        }
+
+        footer a {
+            color: #fff; /* Set your text color */
+            text-decoration: none;
+            transition: color 0.3s ease; /* Smooth transition for color change */
+        }
+
+        footer a:hover {
+            color: #C22705; /* Change color on hover to green */
+        }
+
+        .body-section {
+            text-align: center;
+            padding: 30px;
+            background-color: #fff; /* Set your section background color */
+            color: #C22705; /* Set your section title color */
+            
+        }
+
+        .section-title {
+            font-size: 4em;
+            font-weight: bold;
+            margin-bottom: 30px;
+            margin-top: 70px;
+        }
+
+         .section-title1 {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 30px;
+            margin-top: 10px;
+            color: #000;
+        }
+
+        .section-subtitle {
+            font-size: 1.2em;
+            margin-bottom: 50px;
+            color: #000;
+        }
+
+        .cta-button {
+            background-color: #C22705; /* Set your button background color */
+            color: #fff; /* Set your button text color */
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2em;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin-bottom: 80px;
+            font-family: 'Montserrat', sans-serif;
+            margin-top: 150px;
+            text-decoration: none; /* Remove underline */
+            font-weight: bold;
+        }
+
+
+        .cta-button:hover {
+            background-color: #000; /* Change button color on hover */
+            text-decoration: none; /* Ensure no underline on hover */
+        }
+
+        .sub-text {
+            font-size: 0.8em;
+            color: #000; /* Set your sub-text color */
+            margin-bottom: 100px;
+        }
+
+        .vendor-registration-link {
+            color: #C22705; /* Set your vendor registration link color */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .vendor-registration-link:hover {
+            text-decoration: underline;
+        }
+
+    
+    /* ... (Previous styles) ... */
+
+    .features-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 40px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        margin-top: 100px;
+    }
+
+    .feature-item {
+        border: 1px solid #C22705;
+        padding: 35px;
+        border-radius: 10px;
+        transition: background-color 0.3s ease;
+    }
+
+    .feature-item:hover {
+        background-color: #B60C0C;
+        color: #fff;
+    }
+
+    .feature-item h3 {
+        font-size: 1.9em;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    .feature-item p {
+        font-size: 1.1em;
+        color: #000;
+    }
+
+    .feature-item p:hover {
+      
+        color: #fff;
+    }
+
+
+
+    .sponsor-title {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-top: 60px;
+        margin-bottom: 10px;
+    }
+
+.image-space {
+        text-align: center;
+        margin-bottom: 30px;
+        max-width: 40%;
+    }
+
+    .image-space img {
+        width: 40%; /* Set the image width to 40% */
+        height: auto; /* Maintain the image's aspect ratio */
+        margin-left: 520px;
+    }
+
+  .white-background-section {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    overflow: hidden; /* Hide overflowing content */
+}
+
+.animated-texts-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.animated-text {
+    font-weight: bold;
+    font-size: 2.8em;
+    opacity: 0;
+    animation: fadeInUp 9s ease-out infinite;
+    margin: 20px 0;
+    color: darkblue;
+    margin-top: 50px;
+}
+
+@keyframes fadeInUp {
+    0%, 20% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    25%, 75% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    80%, 100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+/* Delay the animation for each text */
+.animated-text:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.animated-text:nth-child(2) {
+    animation-delay: 3s;
+}
+
+.animated-text:nth-child(3) {
+    animation-delay: 6s;
+}
+
+.body-section1 {
+        background-color: #fff; /* Set your section background color */
+        color: #000; /* Set your section text color */
+        padding: 0px;
+        text-align: center;
+        width: 100%;
+    }
+
+     .section-title1 {
+            font-size: 4em;
+            font-weight: bold;
+            margin-bottom: 30px;
+            margin-top: 70px;
+            color:#C22705 ;
+        }
+
+    .pricing-plan {
+        background-color: #f0f0f0; /* Set background color for pricing plans */
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 20px;
+        display: inline-block;
+        width: 250px;
+        vertical-align: top;
+    }
+
+    .pricing-plan h2 {
+        font-size: 1.9em;
+        margin-bottom: 20px;
+        color:#C22705 ;
+    }
+
+    .pricing-plan p {
+        margin: 15px 0;
+        text-align: left;
+        font-weight: bold;
+        font-weight: 1.7em;
+
+    }
+
+    .cta-button {
+        background-color: #C22705; /* Set your button background color */
+        color: #fff; /* Set your button text color */
+        padding: 15px 30px;
+        border: none;
+        cursor: pointer;
+        font-size: 1.2em;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .cta-button:hover {
+        background-color: #000; /* Change button color on hover */
+        text-decoration: none; /* Ensure no underline on hover */
+    }
+
+    .pricing-features {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .pricing-features h3 {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .pricing-features ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: left;
+    }
+
+    .pricing-features li {
+        margin: 5px 0;
+    }
+
+   #basic-plan-price {
+    margin: 5px 0;
+    text-align: center;
+    font-size: 1.3em;
+    color: #C22705;
+}
+
+.section-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 60px;
+}
+
+.left-part,
+.right-part {
+    flex: 1;
+}
+
+.left-part {
+    flex: 1;
+    margin-left: 30px;
+}
+
+.left-part h3,
+.right-part h3,
+.right-part p,.left-part p  {
+    margin-bottom: 15px;
+    text-align: left;
+    margin-left: 35px;
+    margin-top: 30px;
+}
+
+
+
+
+
+
+
+.image-space {
+    text-align: left;
+    margin-bottom: 30px;
+    max-width: 40%;
+}
+
+.image-space img {
+    width: 25%;
+    height: auto;
+    margin-top: 10px;
+    margin-right: 100px;
+    margin-left: 35px;
+}
+.body-section2 {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 50px;
+
+}
+
+.left-part {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.left-part h2 {
+    margin-bottom: 20px;
+    color: #C22705;
+    margin-left: -3px;
+}
+
+.left-part p {
+    margin-bottom: 20px;
+    color: #333;
+    margin-left: -8px;
+}
+
+.contact-form {
+    max-width: 400px;
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-left: -3px;
+    padding-right: 50px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+    margin-top: 6px;
+    margin-left: -20px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+    margin-top: 6px;
+    margin-right: 5px;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: -20px;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #C22705;
+
+
+}
+
+button {
+    background-color: #C22705;
+    color: #fff;
+    padding: 18px 33px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    margin-top: 15px;
+    font-size: 20px;
+    margin-left: -20px;
+    margin-bottom: -50px;
+}
+
+button:hover {
+    background-color: #000;
+}
+
+.right-part {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-space {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.image-space1 img {
+    width: 50%; /* Increase the image width */
+    max-width: 200%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 35px;
+    margin-top: 130px;
+    margin-left: 70px;
+}
+
+
+
+
+
+
+.company-address {
+    text-align: left;
+    color: #555;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    font-weight: bold;
+    margin-left: -150px;
+}
+
+.company-address p {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    margin-left: -20px;
+}
+
+
+
+ </style>
+</head>
+<body>
+
+<header>
+    <div>
+        <!-- Make the logo clickable and redirect to Index.html -->
+        <a href="Index.html">
+            <img src="Findmy-removebg-preview.png" alt="Logo">
+        </a>
+
+    </div>
+    <nav>
+        <a href="Index.html">Search</a>
+        <a href="Register.html">Register</a>
+        <a href="Finance.html">Financing</a>
+        <a href="Advertise.html">Advertise</a>
+        <a href="LogIn.html">Log In</a>
+    </nav>
+</header>
+
+<!-- First Section -->
+<div class="body-section">
+    <div class="section-title1">Proudly helping truck drivers
+and carriers since 2007.</div>
+    <div class="section-subtitle">Helping more than 1 million truck drivers and carriers find service, annually!</div>
+    <br>
+    <br>
+    <br>
+  
+    <div class="section-title1">We make it fast and easy to Find Truck Service!</div>
+    <img src="istockphoto-1096124416-612x612.jpg" alt="Image" style="width: 50%; margin-top: 20px; margin-bottom: 20px;">
+    <img src="2c31d469a6a2f16c85058c0c8ccb20fb-removebg-preview.png" alt="Image" style="width: 19%; margin-top: -50px; margin-bottom: 20px;">
+    <!-- End of New Title and Image Space -->
+
+  
+
+</div>
+
+
+
+
+
+
+<!-- New Title and Image Space -->
+
+<div class="section-content">
+    <div class="left-part">
+        <h3>About Find Truck Service</h3>
+        <p>Find Truck Service, Inc started in 2007 with the vision of providing the best national source of heavy duty service locations for truck drivers and trucking industry carriers. Our mission is to provide truck drivers and carriers with easy, reliable, and fast access to service locations across North America.
+
+With decades of combined experience in transportation and the heavy duty service industry we understand the needs. Our goal is to save drivers and carriers valuable time and money by providing them with easy access to thousands of qualified heavy duty service providers nationwide.
+
+We are dedicated 24 hours a day, all year round to provide the trucking industry with the best information, access and support.</p>
+
+        <h3>Over 1 Million Industry Users Nationwide!</h3>
+        <p>Find Truck Service is used daily by thousands of owner operators and trucking companies of all sizes, including some of the biggest transportation companies in North America.
+
+We are constantly improving our services to make Find Truck Service the best tool in the industry.</p>
+    </div>
+
+    <div class="right-part">
+        <div class="right-content">
+            <h3>Android App</h3>
+            <p>Find Truck Service & Stops Free Android trucker app is compatible with most Android phones and tablets. You can download the app on Google Play or send a SMS/Text to yourself with the app link here.</p>
+            <div class="image-space">
+                <img src="android-vector-icon-553733187.jpg" >
+            </div>
+        </div>
+
+        <div class="right-content">
+            <h3>Apple iOS App</h3>
+            <p>Find Truck Service & Stops Free iOS trucker app is compatible with most iPhones and iPads on the market. You can download the app on the Apple App Store or send a SMS/Text to yourself with the app link here.</p>
+            <div class="image-space">
+                <img src="418-4185530_appstore-icon-png-image-app-store-ios-icon-835786084.png" >
+            </div>
+        </div>
+
+        <div class="right-content">
+            <h3>DAT Trucker Apps</h3>
+            <p>Find Truck Service & Stops is the exclusive partner and service data provider of the DAT Trucker Android and iOS app. You can access all the service locations with limited details from the DAT Trucker apps
+
+</p>
+            <div class="image-space">
+                <img src="vector-delivery-truck-icon-4128234144.jpg" >
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of New Title and Image Space -->
+
+</div>
+<!-- End of Second Section -->
+
+<!-- New Section -->
+<div class="body-section2">
+    <!-- Left Part -->
+    <div class="left-part">
+        <h2>Got more questions?</h2>
+        <p>If you have more questions, please feel free to call us or use the form below to let us know.</p>
+
+        <!-- Contact Form -->
+        <form class="contact-form">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name">
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address">
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" placeholder="Type your message here"></textarea>
+
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <!-- Right Part -->
+    <div class="right-part">
+        <!-- Image Space -->
+    <div class="image-space1">
+        <img src="suburb.jpg" alt="Suburb Image">
+    </div>
+
+
+        <!-- Company Address -->
+        <div class="company-address">
+            <p>Find My Truck, Inc<br>
+            2030 E. Algonquin Road<br>
+            Suite 404<br>
+            Schaumburg, IL 60173</p>
+            <p>Phone Number: (888) 586-4788 Toll Free</p>
+        </div>
+    </div>
+</div>
+<!-- End of New Section -->
+
+
+
+
+
+
+<footer>
+    <ul>
+        <li><a href="About.html">ABOUT</a></li>
+        <li><a href="Contact.html">CONTACT</a></li>
+        <li><a href="Advertise.html">ADVERTISE</a></li>
+        <li><a href="Register.html">REGISTER</a></li>
+        <li><a href="Tools.html">TOOLS</a></li>
+        <li><a href="Widget.html">WIDGETS</a></li>
+        <li><a href="Finance.html">FINANCING</a></li>
+        <li><a href="Tools.html">TRUCKER APP</a></li>
+        <li><a href="#">GET AUTHORIZED!</a></li>
+    </ul>
+    <p>2020 Calamos Ct Suite 200, Naperville, IL 60563<br>
+    Phone: +1   ___  ____   ____</p>
+
+    <p>Copyright Find Truck Service® | Privacy Policy | Terms of Use | Advertiser Terms</p>
+</footer>
+
+</body>
+</html>
